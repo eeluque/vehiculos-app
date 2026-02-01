@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vehículos App – Sistema de Entrada/Salida de Vehículos
 
-## Getting Started
+Aplicación front-end en Next.js (App Router) para gestionar vehículos y movimientos de entrada/salida. Se conecta a la API REST **vehiculos-api**.
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+
+- La API **vehiculos-api** en ejecución (por ejemplo en `http://localhost:3001`).
+
+## Configuración de la API
+
+Para conectar esta app con tu API:
+
+1. Crea o edita el archivo **`.env.local`** en la raíz del proyecto.
+2. Define la URL base de la API:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sustituye `http://localhost:3001` por la URL donde esté corriendo tu **vehiculos-api** (puerto y host que uses). Reinicia el servidor de desarrollo (`npm run dev`) después de cambiar variables de entorno.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Desarrollo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Abre [http://localhost:3000](http://localhost:3000) en el navegador.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` – Servidor de desarrollo
+- `npm run build` – Compilación para producción
+- `npm run start` – Servidor de producción
+- `npm run lint` – Linter
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estructura
 
-## Deploy on Vercel
+- **`src/app`** – Rutas y páginas (App Router)
+- **`src/components`** – Componentes reutilizables y UI
+- **`src/services`** – Cliente API y funciones de datos
+- **`src/types`** – Tipos TypeScript
+- **`src/lib`** – Utilidades (ej. Shadcn)
+- **`src/utils`** – Validaciones y helpers
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Más información
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Shadcn UI](https://ui.shadcn.com/)
