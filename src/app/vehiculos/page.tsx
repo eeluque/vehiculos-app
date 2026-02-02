@@ -65,7 +65,7 @@ export default function VehiculosPage() {
       {!isLoading && !error && (
         <VehicleTable
           vehicles={vehicles}
-          onEdit={(placa) => {}}
+          onEdit={(placa) => { }}
           onDelete={handleDeleteClick}
         />
       )}

@@ -18,7 +18,7 @@ export async function createMovement(
     vehiculo_placa: payload.vehiculo_placa,
     nombre_conductor: payload.nombre_conductor,
     creado: payload.creado,
-    ...(payload.kilometraje != null && { kilometraje: payload.kilometraje }),
+    kilometraje: payload.kilometraje,
   };
   return post<{ mensaje?: string }>("/movimientos", body);
 }

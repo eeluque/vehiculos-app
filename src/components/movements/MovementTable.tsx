@@ -61,7 +61,7 @@ export function MovementTable({ movements }: MovementTableProps) {
                 <TableCell>{m.nombre_conductor}</TableCell>
                 <TableCell className="capitalize">{m.direccion}</TableCell>
                 <TableCell>{formatDateTime(m.creado)}</TableCell>
-                <TableCell>{m.kilometraje ?? "—"}</TableCell>
+                <TableCell>{m.kilometraje}</TableCell>
               </TableRow>
             ))}
           </TableBody>
