@@ -1,5 +1,12 @@
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+function getApiBase(): string {
+  const url = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+  return `https://${url}`;
+}
+
+const API_BASE = getApiBase();
 
 export interface ApiError {
   message: string;
