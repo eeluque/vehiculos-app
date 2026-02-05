@@ -2,8 +2,8 @@ import { get, post, patch, del } from "./api";
 import type { Vehicle, CreateVehiclePayload, UpdateVehiclePayload } from "@/types/vehicle";
 
 export async function getVehicles(): Promise<Vehicle[]> {
-  const data = await get<Vehicle[]>("/vehiculos");
-  return Array.isArray(data) ? data : [];
+  const res = await get<{ mensaje?: string; data?: Vehicle[] }>("/vehiculos");
+  return Array.isArray(res?.data) ? res.data : [];
 }
 
 export async function createVehicle(

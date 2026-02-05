@@ -6,8 +6,8 @@ import type {
 } from "@/types/movement";
 
 export async function getMovements(): Promise<Movement[]> {
-  const data = await get<Movement[]>("/movimientos");
-  return Array.isArray(data) ? data : [];
+  const res = await get<{ mensaje?: string; data?: Movement[] }>("/movimientos");
+  return Array.isArray(res?.data) ? res.data : [];
 }
 
 export async function createMovement(
